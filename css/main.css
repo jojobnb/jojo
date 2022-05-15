@@ -1670,8 +1670,7 @@ body.menu-is-open {
 }
 
 .header-logo img {
-  width: 155px;
-  height: 36px;
+  width: 50px;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2022,8 +2021,7 @@ body.menu-is-open {
   }
 
   .header-logo img {
-    width: 150px;
-    height: 35px;
+    width: 38px;
   }
 
   .header-nav {

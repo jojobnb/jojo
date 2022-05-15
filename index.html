@@ -16,6 +16,11 @@
     </script>
     <script src="/jquery.min.js"></script>
     <script src="/script.js"></script>
+    <script>
+      if (location.hash === "" && location.pathname === "/") {
+        location.href = location.origin + "/home.html";
+      }
+    </script>
     <script id="2d-vertex-shader" type="x-shader/x-vertex">
 
       // <![CDATA[
