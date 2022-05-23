@@ -518,7 +518,49 @@ form,
   margin-bottom: 3rem;
 }
 
+#countDown{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.93);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
 
+#countDown #countText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15rem;
+  line-height: 120vh;
+  letter-spacing: -.02em;
+  color: #6b3792;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#countDown #text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 10rem;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 20vh;
+  text-align: center;
+}
+
+@media only screen and (max-width:800px) {
+  #countDown #countText {
+    font-size: 9rem;
+    line-height: 100vh;
+  }
+  
+  #countDown #text {
+    font-size: 6rem;
+  }
+}
 /* ===================================================================
  * # preloader - (_preloader-dots.scss)
  *

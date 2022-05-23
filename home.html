@@ -33,6 +33,11 @@
 
 <body id="top">
 
+<div id="countDown">
+	<div id="text">Dapp Launch Countdown</div>
+	<div id="countText"></div>
+</div>
+
 <!-- preloader
 ================================================== -->
 <div id="preloader">
@@ -544,6 +549,33 @@
 ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/plugins.js"></script>
+<script src="js/countDown.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+	$(function() {
+		$("#countDown").click(() => {
+			$("#countDown").hide();
+		})
+
+		var startDate = new Date();
+    var endDate = new Date("2022-05-23 22:00:00");
+
+		if (startDate >= endDate) {
+			$("#countDown").hide();
+		} else {
+			CountDown.openTimeCountByStartAndEndDate({
+        Ele: document.getElementById('countText'),
+        StartDate: startDate,
+        EndDate: endDate,
+        Sign: 'flypie',
+        Divider: ' : ',
+        EndFunc: function () {
+          $("#countDown").hide();
+        },
+    });
+		}
+	})
+</script>
 
 </body>
