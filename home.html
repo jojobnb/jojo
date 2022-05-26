@@ -229,6 +229,23 @@
 
 </section> <!-- end s-about -->
 
+<!-- clients
+================================================== -->
+<section id="clients" class="s-clients target-section darker" style="padding-top: 0;padding-bottom: 0;">
+
+	<div class="row section-header text-center narrow" data-aos="fade-up">
+		<div class="col-full">
+			<h3 class="subhead">Tokenology</h3>
+			<h1 class="display-1">Tax：6%</h1>
+		</div>
+	</div> <!-- end section-header -->
+
+	<div class="row clients-wrap" data-aos="fade-up">
+		<div id="charts" style="height:400px; margin: 0 auto;"></div>
+	</div>
+
+</section> <!-- end s-clients -->
+
 <!-- works
 ================================================== -->
 <section id="works" class="s-works target-section">
@@ -551,6 +568,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/countDown.js"></script>
 <script src="js/main.js"></script>
+<script src="js/echarts.js"></script>
 
 <!-- <script>
 	$(function() {
@@ -577,5 +595,57 @@
 		}
 	})
 </script> -->
+
+<script>
+	$(function() {
+		const option = {
+			backgroundColor: 'transparent',
+			title: {
+				left: 'center',
+				textStyle: {
+					color: '#fff'
+				}
+			},
+
+			color: ["#b94539", "#cba006", "#6c56e3"],
+			series: [
+				{
+					name: 'Tax',
+					type: 'pie',
+					radius: '95%',
+					center: ['50%', '50%'],
+					data: [
+						{ value: 3, name: 'Marketing 3%' },
+						{ value: 2, name: 'Dev 2%' },
+						{ value: 1, name: 'Return 1%' },
+					],
+					roseType: 'area',
+					label: {
+						color: '#fff',
+						fontSize: '16px',
+						position: 'inner',
+					},
+					labelLine: {
+						lineStyle: {
+							color: 'rgba(255, 255, 255, 0.3)'
+						},
+						smooth: 0.2,
+						length: 10,
+						length2: 20
+					},
+					animationType: 'scale',
+					animationEasing: 'elasticOut',
+					animationDelay: function (idx) {
+						return Math.random() * 200;
+					}
+				}
+			]
+		};
+		const chartsId = document.getElementById("charts");
+		chartsId.style.width = (document.body.clientWidth / 1.5) + 'px';
+		const myChart = echarts.init(chartsId);
+		myChart.setOption(option);
+	})
+</script>
 
 </body>
